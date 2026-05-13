@@ -1,0 +1,122 @@
+generator client {
+  provider     = "prisma-client-js"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  ADMIN
+  PASTOR
+  LEADER
+  MEMBER
+}
+
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  password      String
+  name          String
+  role          Role      @default(MEMBER)
+  church        Church?   @relation(fields: [churchId], references: [id])
+  churchId      String?
+  refreshTokens RefreshToken[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@map("users")
+}
+
+model Church {
+  id          String   @id @default(uuid())
+  name        String
+  address     String?
+  logoUrl     String?
+  users       User[]
+  members     Member[]
+  cells       Cell[]
+  events      Event[]
+  finances    Finance[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("churches")
+}
+
+model Member {
+  id          String    @id @default(uuid())
+  name        String
+  email       String?
+  phone       String?
+  birthDate   DateTime?
+  address     String?
+  church      Church    @relation(fields: [churchId], references: [id])
+  churchId    String
+  cell        Cell?     @relation(fields: [cellId], references: [id])
+  cellId      String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("members")
+}
+
+model Cell {
+  id          String    @id @default(uuid())
+  name        String
+  leader      String?
+  church      Church    @relation(fields: [churchId], references: [id])
+  churchId    String
+  members     Member[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("cells")
+}
+
+model Event {
+  id          String    @id @default(uuid())
+  title       String
+  description String?
+  date        DateTime
+  location    String?
+  church      Church    @relation(fields: [churchId], references: [id])
+  churchId    String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("events")
+}
+
+model Finance {
+  id          String    @id @default(uuid())
+  type        FinanceType
+  amount      Float
+  description String?
+  date        DateTime  @default(now())
+  church      Church    @relation(fields: [churchId], references: [id])
+  churchId    String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("finances")
+}
+
+enum FinanceType {
+  TITHES
+  OFFERING
+  EXPENSE
+  OTHER
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  token     String   @unique
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@map("refresh_tokens")
+}
