@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils"
+import React from "react"
 import { Calendar as Plus, MapPin, Clock, MoreHorizontal } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import api from '../lib/api';

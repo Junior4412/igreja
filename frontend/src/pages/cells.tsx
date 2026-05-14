@@ -1,4 +1,6 @@
-import { Pluss2, MoreHorizontal, MapPin } from 'lucide-react';
+import { cn } from "@/lib/utils"
+import React from "react"
+import { Plus, MoreHorizontal, MapPin } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import api from '../lib/api';
 

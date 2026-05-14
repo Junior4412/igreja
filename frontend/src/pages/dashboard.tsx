@@ -1,4 +1,6 @@
-import { UsersPlus, Calendar, TrendingUp, TrendingDown, DollarSign } from 'lucide-react';
+import { cn } from "@/lib/utils"
+import React from "react"
+import { UserPlus, Calendar, TrendingUp, TrendingDown, DollarSign } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { DashboardCharts } from '../components/dashboard/analytics-charts';
 import api from '../lib/api';
