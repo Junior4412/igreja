@@ -1,22 +1,16 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  LayoutDashboard, 
-  Users, 
+  LayoutDashboards, 
   Calendar, 
   DollarSign, 
   Settings, 
   LogOut,
   ChevronRight,
-  Bell,
-  Search,
-  Users2,
+  Bells2,
   Sun,
   Moon
 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { cn } from '../shared/lib/utils';
-
 interface SidebarItemProps {
   icon: React.ElementType;
   label: string;

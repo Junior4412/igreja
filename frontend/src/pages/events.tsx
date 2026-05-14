@@ -1,7 +1,5 @@
-import React from 'react';
-import { Calendar as CalendarIcon, Plus, MapPin, Clock, MoreHorizontal, Loader2 } from 'lucide-react';
+import { Calendar as Plus, MapPin, Clock, MoreHorizontal } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
-import { cn } from '../shared/lib/utils';
 import api from '../lib/api';
 
 export default function EventsPage() {

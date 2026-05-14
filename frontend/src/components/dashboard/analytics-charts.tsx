@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   AreaChart, Area, LineChart, Line, XAxis, YAxis,
   CartesianGrid, Tooltip, ResponsiveContainer, Legend,
@@ -56,7 +55,7 @@ export function DashboardCharts({ data }: DashboardChartsProps) {
                 tickFormatter={(v) => `R$${(v / 1000).toFixed(0)}k`} />
               <Tooltip
                 contentStyle={{ backgroundColor: 'hsl(var(--card))', borderRadius: '12px', border: '1px solid hsl(var(--border))' }}
-                formatter={(value: number, name: string) => [formatCurrency(value), name]}
+                formatter={(value: number | string | undefined, name) => [formatCurrency(value), name]}
               />
               <Legend />
               <Line type="monotone" dataKey="receita" name="Receita"

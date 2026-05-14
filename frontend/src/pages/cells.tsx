@@ -1,7 +1,5 @@
-import React from 'react';
-import { Search, Plus, Users2, MoreHorizontal, MapPin, User, Loader2 } from 'lucide-react';
+import { Pluss2, MoreHorizontal, MapPin } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
-import { cn } from '../shared/lib/utils';
 import api from '../lib/api';
 
 export default function CellsPage() {

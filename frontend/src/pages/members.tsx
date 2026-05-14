@@ -1,10 +1,8 @@
-import React from 'react';
-import { Search, Plus, Filter, MoreHorizontal, User, Loader2, X, Save } from 'lucide-react';
+import { Plus, Filter, MoreHorizontal, X, Save } from 'lucide-react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
-import { cn } from '../shared/lib/utils';
 import api from '../lib/api';
 
 export default function MembersPage() {

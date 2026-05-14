@@ -1,10 +1,8 @@
-import React from 'react';
-import { TrendingUp, TrendingDown, DollarSign, Download, Plus, Search, Loader2, X } from 'lucide-react';
+import { TrendingUp, TrendingDown, DollarSign, Download, Plus, X } from 'lucide-react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from '../shared/lib/utils';
 import api from '../lib/api';
 
 const FINANCE_TYPES = [

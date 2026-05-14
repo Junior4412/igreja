@@ -1,4 +1,3 @@
-import React from 'react';
 import { Settings, Church, Shield, Bell, Save } from 'lucide-react';
 
 export default function SettingsPage() {
