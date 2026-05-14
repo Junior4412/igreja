@@ -1,6 +1,4 @@
-import { cn } from "@/lib/utils"
-import React from "react"
-import { Plus, Filter, MoreHorizontal, X, Save } from 'lucide-react';
+import { Loader2, Search, User } from "lucide-react"
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm } from 'react-hook-form';

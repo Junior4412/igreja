@@ -1,17 +1,6 @@
 import { cn } from "@/lib/utils"
-import React from "react"
 import { motion } from 'framer-motion';
-import { 
-  LayoutDashboard, 
-  Calendar, 
-  DollarSign, 
-  Settings, 
-  LogOut,
-  ChevronRight,
-  Bell,
-  Sun,
-  Moon
-} from 'lucide-react';
+import { LayoutDashboard, Bell, Search, Users, Users2 } from "lucide-react"
 import { Link, useLocation } from 'react-router-dom';
 interface SidebarItemProps {
   icon: React.ElementType;
